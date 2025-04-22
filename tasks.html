@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks - Bullet Bytes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Bullet Bytes Logo">
+        </div>
+        <div class="nav-links">
+            <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+            <a href="home.html" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="images/bujo.png" alt="Profile" class="profile-img">
+                <h3>Welcome back!</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><i class="fas fa-tasks"></i> Tasks</li>
+                <li><a href="habits.html"><i class="fas fa-chart-line"></i> Habits</a></li>
+                <li><a href="mood.html"><i class="fas fa-smile"></i> Mood Tracker</a></li>
+                <li><i class="fas fa-calendar"></i> Calendar</li>
+                <li><i class="fas fa-cog"></i> Settings</li>
+            </ul>
+        </aside>
+
+        <section class="main-content">
+            <div class="quick-add">
+                <input type="text" placeholder="Add a new task..." class="task-input">
+                <button class="add-btn"><i class="fas fa-plus"></i></button>
+            </div>
+
+            <div class="tasks-container">
+                <div class="tasks-header">
+                    <h2>Tasks</h2>
+                </div>
+
+                <div class="task-filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Today</button>
+                    <button class="filter-btn">Upcoming</button>
+                    <button class="filter-btn">Completed</button>
+                </div>
+
+                <div class="task-list" id="taskList">
+                    <!-- Task items will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

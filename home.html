@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Bullet Bytes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="Bullet Bytes Logo">
+            <h1 class="tagline">Bullet Bytes</h1>
+        </a>
+        <div class="navbar-buttons">
+            <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+            <a href="login.html" class="nav-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="image">
+            <img src="images/bujo.png" alt="Task Management" class="main">
+        </div>
+        <div class="content">
+            <h2>Your Personal Productivity Companion</h2>
+            <p>Welcome to Bullet Bytes, where organization meets elegance. Our intuitive platform helps you manage tasks, track habits, and achieve your goals with style and efficiency.</p>
+            <div class="nav-links">
+                <a href="signup.html" class="nav-btn">Get Started</a>
+                <a href="login.html" class="nav-btn">Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="gallery">
+        <h2>Features Gallery</h2>
+        <div class="gallery-grid">
+            <img src="images/gal1.png" alt="Task Management">
+            <img src="images/gal2.png" alt="Calendar Integration">
+            <img src="images/gal3.png" alt="Progress Tracking">
+            <img src="images/gal4.png" alt="Habit Tracking">
+            <img src="images/gal5.png" alt="Mood Tracking">
+        </div>
+    </section>
+
+    <footer>
+        <p>About Us</p>
+        <p>Contact</p>
+        <p>Privacy Policy</p>
+        <p id="copy">&copy; 2024 Bullet Bytes. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme toggle functionality
+            const themeToggle = document.querySelector('.theme-toggle');
+            themeToggle.addEventListener('click', () => {
+                document.body.dataset.theme = document.body.dataset.theme === 'dark' ? '' : 'dark';
+                themeToggle.innerHTML = document.body.dataset.theme === 'dark' ? 
+                    '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            });
+        });
+    </script>
+</body>
+</html>

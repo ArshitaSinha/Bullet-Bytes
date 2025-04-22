@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker - Bullet Bytes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Bullet Bytes</div>
+        <div class="nav-links">
+            <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="images/bujo.png" alt="Profile" class="profile-img">
+                <h3>Finance Tracker</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="active"><a href="finance.html"><i class="fas fa-coins"></i> Finances</a></li>
+            </ul>
+        </aside>
+
+        <section class="main-content">
+            <div class="finance-section">
+                <h2><i class="fas fa-wallet"></i> Financial Overview</h2>
+                <div class="chart-container">
+                        <canvas id="financeChart"></canvas>
+                    </div>
+                    <div class="balance-display">
+                    <div class="balance-item income">
+                        <span>Total Income</span>
+                        <span id="totalIncome">$0.00</span>
+                    </div>
+                    <div class="balance-item expense">
+                        <span>Total Expense</span>
+                        <span id="totalExpense">$0.00</span>
+                    </div>
+                    <div class="balance-item total">
+                        <span>Net Balance</span>
+                        <span id="netBalance">$0.00</span>
+                    </div>
+                </div>
+
+                <form id="transactionForm">
+                    <div class="form-group">
+                        <label for="transactionType">Type:</label>
+                        <select id="transactionType" required>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input type="text" id="description" required>
+                    </div>
+                    <button type="submit" class="add-btn">Add Transaction</button>
+                </form>
+
+                <div class="transaction-list">
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="income">Income</button>
+                        <button class="filter-btn" data-filter="expense">Expense</button>
+                    </div>
+                    <h3><i class="fas fa-history"></i> Transaction History</h3>
+                    <table id="transactionTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="finance.js"></script>
+</body>
+</html>

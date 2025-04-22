@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals - Bullet Bytes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Bullet Bytes Logo">
+            Bullet Bytes
+        </div>
+        <div class="nav-links">
+            <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+            <a href="index.html" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="login.html" class="login-btn">Login</a>
+            <button class="logout-btn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="images/bujo.png" alt="Profile" class="profile-img">
+                <h3>Welcome back!</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="tasks.html"><i class="fas fa-tasks"></i> Tasks</a></li>
+                <li><a href="habits.html"><i class="fas fa-chart-line"></i> Habits</a></li>
+                <li><a href="daily-log.html"><i class="fas fa-book"></i> Daily Log</a></li>
+                <li><a href="monthly-overview.html"><i class="fas fa-calendar-alt"></i> Monthly Overview</a></li>
+                <li class="active"><a href="goals.html"><i class="fas fa-bullseye"></i> Goals</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </aside>
+
+        <section class="main-content">
+            <div class="goals-header">
+                <h2>My Goals</h2>
+                <div class="view-options">
+                    <button class="view-btn active" id="allGoalsBtn"><i class="fas fa-th-list"></i> All</button>
+                    <button class="view-btn" id="shortTermBtn"><i class="fas fa-hourglass-half"></i> Short-term</button>
+                    <button class="view-btn" id="longTermBtn"><i class="fas fa-hourglass-end"></i> Long-term</button>
+                </div>
+            </div>
+
+            <div class="quick-add">
+                <input type="text" placeholder="Add a new goal..." class="task-input" id="goalInput">
+                <select id="goalTypeSelect" class="entry-type-select">
+                    <option value="short-term">Short-term</option>
+                    <option value="long-term">Long-term</option>
+                </select>
+                <button class="add-btn" id="addGoalBtn"><i class="fas fa-plus"></i></button>
+            </div>
+
+            <div class="goals-container">
+                <div class="goals-list" id="goalsList">
+                    <!-- Goals will be dynamically added here -->
+                </div>
+            </div>
+
+            <div class="goal-progress-overview">
+                <h3>Progress Overview</h3>
+                <div class="progress-stats">
+                    <div class="progress-stat">
+                        <div class="stat-label">Short-term Goals</div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="shortTermProgress" style="width: 0%;"></div>
+                        </div>
+                        <div class="stat-value" id="shortTermProgressValue">0%</div>
+                    </div>
+                    <div class="progress-stat">
+                        <div class="stat-label">Long-term Goals</div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="longTermProgress" style="width: 0%;"></div>
+                        </div>
+                        <div class="stat-value" id="longTermProgressValue">0%</div>
+                    </div>
+                    <div class="progress-stat">
+                        <div class="stat-label">Overall Progress</div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="overallProgress" style="width: 0%;"></div>
+                        </div>
+                        <div class="stat-value" id="overallProgressValue">0%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="theme-manager.js"></script>
+    <script src="auth.js"></script>
+    <script src="goals.js"></script>
+</body>
+</html>

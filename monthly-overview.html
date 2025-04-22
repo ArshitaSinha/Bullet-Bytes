@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Overview - Bullet Bytes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/main.min.css' rel='stylesheet' />
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.8/main.min.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Bullet Bytes Logo">
+            Bullet Bytes
+        </div>
+        <div class="nav-links">
+            <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+            <a href="index.html" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="login.html" class="login-btn">Login</a>
+            <button class="logout-btn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="images/bujo.png" alt="Profile" class="profile-img">
+                <h3>Welcome back!</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="tasks.html"><i class="fas fa-tasks"></i> Tasks</a></li>
+                <li><a href="habits.html"><i class="fas fa-chart-line"></i> Habits</a></li>
+                <li><a href="daily-log.html"><i class="fas fa-book"></i> Daily Log</a></li>
+                <li class="active"><a href="monthly-overview.html"><i class="fas fa-calendar-alt"></i> Monthly Overview</a></li>
+                <li><a href="goals.html"><i class="fas fa-bullseye"></i> Goals</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </aside>
+
+        <section class="main-content">
+            <div class="monthly-overview-header">
+                <h2>Monthly Overview</h2>
+                <div class="view-controls">
+                    <button id="todayBtn" class="filter-btn">Today</button>
+                    <div class="display-options">
+                        <button id="showTasksBtn" class="filter-btn active">Tasks</button>
+                        <button id="showHabitsBtn" class="filter-btn">Habits</button>
+                        <button id="showEventsBtn" class="filter-btn">Events</button>
+                        <button id="showAllBtn" class="filter-btn">All</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calendar-container">
+                <div id="calendar"></div>
+            </div>
+
+            <div class="day-preview">
+                <h3 id="selectedDate">Selected Day</h3>
+                <div id="dayPreviewContent" class="day-preview-content">
+                    <!-- Day preview content will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="theme-manager.js"></script>
+    <script src="auth.js"></script>
+    <script src="monthly-overview.js"></script>
+</body>
+</html>

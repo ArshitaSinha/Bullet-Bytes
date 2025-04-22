@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker - Bullet Bytes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mood.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Bullet Bytes Logo">
+        </div>
+        <div class="nav-links">
+            <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+            <a href="home.html" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="images/bujo.png" alt="Profile" class="profile-img">
+                <h3>Welcome back!</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="tasks.html"><i class="fas fa-tasks"></i> Tasks</a></li>
+                <li><a href="habits.html"><i class="fas fa-chart-line"></i> Habits</a></li>
+                <li class="active"><i class="fas fa-smile"></i> Mood Tracker</li>
+                <li><i class="fas fa-calendar"></i> Calendar</li>
+                <li><i class="fas fa-cog"></i> Settings</li>
+            </ul>
+        </aside>
+
+        <section class="main-content">
+            <div class="mood-tracker-container">
+                <div class="mood-header">
+                    <h2>Mood Tracker</h2>
+                    <div class="date-selector">
+                        <button class="date-nav"><i class="fas fa-chevron-left"></i></button>
+                        <span id="currentDate">Today</span>
+                        <button class="date-nav"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="mood-input">
+                    <h3>How are you feeling today?</h3>
+                    <div class="mood-options">
+                        <button class="mood-btn" data-mood="great">
+                            <i class="fas fa-laugh-beam"></i>
+                            <span>Great</span>
+                        </button>
+                        <button class="mood-btn" data-mood="good">
+                            <i class="fas fa-smile"></i>
+                            <span>Good</span>
+                        </button>
+                        <button class="mood-btn" data-mood="okay">
+                            <i class="fas fa-meh"></i>
+                            <span>Okay</span>
+                        </button>
+                        <button class="mood-btn" data-mood="bad">
+                            <i class="fas fa-frown"></i>
+                            <span>Bad</span>
+                        </button>
+                        <button class="mood-btn" data-mood="awful">
+                            <i class="fas fa-sad-tear"></i>
+                            <span>Awful</span>
+                        </button>
+                    </div>
+                    <div class="mood-notes">
+                        <textarea placeholder="Add notes about your day..." class="notes-input"></textarea>
+                        <button class="save-mood-btn">Save Entry</button>
+                    </div>
+                </div>
+
+                <div class="mood-history">
+                    <h3>Mood History</h3>
+                    <div class="mood-calendar" id="moodCalendar">
+                        <!-- Mood calendar will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="theme-manager.js"></script>
+    <script src="mood.js"></script>
+</body>
+</html>

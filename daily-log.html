@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Log - Bullet Bytes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/main.min.css' rel='stylesheet' />
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/main.min.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Bullet Bytes Logo">
+            Bullet Bytes
+        </div>
+        <div class="nav-links">
+            <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+            <a href="index.html" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="login.html" class="login-btn">Login</a>
+            <button class="logout-btn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="images/bujo.png" alt="Profile" class="profile-img">
+                <h3>Welcome back!</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="tasks.html"><i class="fas fa-tasks"></i> Tasks</a></li>
+                <li><a href="habits.html"><i class="fas fa-chart-line"></i> Habits</a></li>
+                <li class="active"><a href="daily-log.html"><i class="fas fa-book"></i> Daily Log</a></li>
+                <li><a href="monthly-overview.html"><i class="fas fa-calendar-alt"></i> Monthly Overview</a></li>
+                <li><a href="goals.html"><i class="fas fa-bullseye"></i> Goals</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </aside>
+
+        <section class="main-content">
+            <div class="date-navigation">
+                <button id="prevDay"><i class="fas fa-chevron-left"></i></button>
+                <h2 id="currentDate">Today's Log</h2>
+                <button id="nextDay"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div class="quick-add">
+                <input type="text" placeholder="Add a new entry..." class="task-input" id="logEntryInput">
+                <select id="entryTypeSelect" class="entry-type-select">
+                    <option value="task">Task</option>
+                    <option value="note">Note</option>
+                    <option value="event">Event</option>
+                </select>
+                <button class="add-btn" id="addLogEntryBtn"><i class="fas fa-plus"></i></button>
+            </div>
+
+            <div class="log-entries-container">
+                <div class="log-entries" id="logEntries">
+                    <!-- Log entries will be dynamically added here -->
+                </div>
+            </div>
+
+            <div class="migration-panel">
+                <h3>Migration</h3>
+                <p>Select entries to migrate to another day:</p>
+                <div class="migration-controls">
+                    <input type="date" id="migrationDate" class="migration-date">
+                    <button id="migrateBtn" class="migrate-btn">Migrate Selected</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="theme-manager.js"></script>
+    <script src="auth.js"></script>
+    <script src="daily-log.js"></script>
+</body>
+</html>
